@@ -15,7 +15,7 @@ public class Servlet1 extends HttpServlet {
 	
 		PrintWriter out = response.getWriter();
 		out.println("<h1>Servlet1</h1>");
-		out.println("<p><a href='Servlet2'>Servlet2</a></p>");
+		out.println("<p><a href='Servlet2?n1=9'>Servlet2</a></p>");
 		out.close();
 	}
 
