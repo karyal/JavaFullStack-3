@@ -15,15 +15,15 @@ public class Servlet2 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//Receive, and display
-		String txtNum1 =(String) request.getAttribute("n1");
-		String txtNum2 =(String) request.getAttribute("n2");
-		String txtNum3 =(String) request.getAttribute("n3");
+		//String txtNum1 =(String) request.getAttribute("n1");
+		//String txtNum2 =(String) request.getAttribute("n2");
+		//String txtNum3 =(String) request.getAttribute("n3");
 		
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
-		out.println("<p>Num1 : "+txtNum1+"</p>");
-		out.println("<p>Num2 : "+txtNum2+"</p>");
-		out.println("<p>Sum : "+txtNum3+"</p>");
+		out.println("<p>Num1 : "+request.getAttribute("n1")+"</p>");
+		out.println("<p>Num2 : "+request.getAttribute("n2")+"</p>");
+		out.println("<p>Sum : "+request.getAttribute("n3")+"</p>");
 		out.println("<p><a href='WebForm'>Calculator</a></p>");
 		out.close();
 	}

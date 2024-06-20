@@ -16,11 +16,8 @@ public class Servlet1 extends HttpServlet {
 		//Receive, Validate, Process
 		//Forward to Servlet2	
 		
-		String txtNum1 = request.getParameter("txtN1");
-		String txtNum2 = request.getParameter("txtN2");
-		
-		int num1 = Integer.parseInt(txtNum1);
-		int num2 = Integer.parseInt(txtNum2);
+		int num1 = Integer.parseInt(request.getParameter("txtN1"));
+		int num2 = Integer.parseInt(request.getParameter("txtN2"));
 		
 		int sum = num1 + num2;
 		
