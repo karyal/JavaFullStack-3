@@ -22,7 +22,7 @@ public class Servlet2 extends HttpServlet {
 		
 		int total = Integer.parseInt(request.getAttribute("total").toString());
 		int average = Integer.parseInt(request.getAttribute("average").toString());
-		String result= request.getAttribute("total").toString();
+		String result= request.getAttribute("result").toString();
 		
 		//output
 		PrintWriter out = response.getWriter();

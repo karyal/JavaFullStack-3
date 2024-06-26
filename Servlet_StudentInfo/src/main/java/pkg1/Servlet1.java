@@ -28,7 +28,7 @@ public class Servlet1 extends HttpServlet {
 		int average = total/2;
 		String result = "FAIL";
 		if((sub1>=40) && (sub2>=40)) {
-			result="FAIL";
+			result="PASS";
 		}
 		
 		request.setAttribute("total", total);
