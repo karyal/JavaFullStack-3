@@ -31,6 +31,11 @@ public class Servlet1 extends HttpServlet {
 			result="FAIL";
 		}
 		
+		request.setAttribute("total", total);
+		request.setAttribute("average", average);
+		request.setAttribute("result", result);
+		
+		//All values from user form & total, average, and result
 		RequestDispatcher rd = request.getRequestDispatcher("Servlet2");
 		rd.forward(request, response);
 	}

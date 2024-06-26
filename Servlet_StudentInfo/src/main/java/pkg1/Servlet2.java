@@ -12,7 +12,7 @@ public class Servlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Display Result
+		//WebForm
 		int sid = Integer.parseInt(request.getParameter("txtSid"));
 		String name = request.getParameter("txtName");
 		String course = request.getParameter("course");
