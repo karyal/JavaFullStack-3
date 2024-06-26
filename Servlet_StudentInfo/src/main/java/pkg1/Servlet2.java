@@ -20,6 +20,10 @@ public class Servlet2 extends HttpServlet {
 		int sub1 = Integer.parseInt(request.getParameter("txtSub1"));
 		int sub2 = Integer.parseInt(request.getParameter("txtSub2"));
 		
+		int total = Integer.parseInt(request.getAttribute("total").toString());
+		int average = Integer.parseInt(request.getAttribute("average").toString());
+		String result= request.getAttribute("total").toString();
+		
 		//output
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
@@ -30,9 +34,9 @@ public class Servlet2 extends HttpServlet {
 		out.println("<p>SECTION : "+section+"</p>");
 		out.println("<p>PoP : "+sub1+"</p>");
 		out.println("<p>CSS : "+sub2+"</p>");
-		out.println("<p>TOTAL : "+sid+"</p>");
-		out.println("<p>AVERAGE : "+sid+"</p>");
-		out.println("<p>RESULT : "+sid+"</p>");
+		out.println("<p>TOTAL : "+total+"</p>");
+		out.println("<p>AVERAGE : "+average+"</p>");
+		out.println("<p>RESULT : "+result+"</p>");
 		out.println("<p><a href='WebForm'>index</a></p>");
 		out.close();
 		
