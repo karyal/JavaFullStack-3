@@ -44,7 +44,7 @@ public class Servlet3 extends HttpServlet {
 			PreparedStatement pstat = conn.prepareStatement(sql);
 			ResultSet rs = pstat.executeQuery();
 			while(rs.next()) {
-				out.println("<tr><td>"+rs.getInt("sid")+"</td><td>"+rs.getString("fullname")+"</td><td>"+rs.getString("course")+"</td><td>"+rs.getString("section")+"</td><td>"+rs.getInt("sub1")+"</td><td>"+rs.getInt("sub2")+"</td><td>"+rs.getInt("total")+"</td><td>"+rs.getInt("average")+"</td><td>"+rs.getString("result")+"</td><td>EDIT | DELETE </td></tr>");
+				out.println("<tr><td>"+rs.getInt("sid")+"</td><td>"+rs.getString("fullname")+"</td><td>"+rs.getString("course")+"</td><td>"+rs.getString("section")+"</td><td>"+rs.getInt("sub1")+"</td><td>"+rs.getInt("sub2")+"</td><td>"+rs.getInt("total")+"</td><td>"+rs.getInt("average")+"</td><td>"+rs.getString("result")+"</td><td><a href='Servlet4?sid="+rs.getInt("sid")+"'>EDIT</a> | DELETE </td></tr>");
 			}
 			rs.close();
 			pstat.close();
