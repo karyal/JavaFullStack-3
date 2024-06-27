@@ -16,4 +16,6 @@ create table students(
 alter table students
 	add constraint pk_sid
 		primary key(sid);
+
+select * from students;
         
