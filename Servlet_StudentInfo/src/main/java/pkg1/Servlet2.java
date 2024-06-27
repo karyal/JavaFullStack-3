@@ -40,6 +40,8 @@ public class Servlet2 extends HttpServlet {
 		out.println("<p><a href='WebForm'>index</a></p>");
 		out.close();
 		
+		//save data on mysql table?
+		
 	}
 
 	

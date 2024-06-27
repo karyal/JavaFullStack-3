@@ -1,0 +1,7 @@
+Case: Student Result
+
+1. WebForm -> Servlet1 -> Servlet2 -> MySQL (Table)
+2. MySQL (Table) -> Servlet3
+
+ 
+
