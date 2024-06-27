@@ -59,4 +59,14 @@
     <servlet-name>Servlet4</servlet-name>
     <url-pattern>/Servlet4</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Servlet5</display-name>
+    <servlet-name>Servlet5</servlet-name>
+    <servlet-class>pkg1.Servlet5</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet5</servlet-name>
+    <url-pattern>/Servlet5</url-pattern>
+  </servlet-mapping>
 </web-app>
