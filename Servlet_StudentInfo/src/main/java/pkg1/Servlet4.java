@@ -24,8 +24,8 @@ public class Servlet4 extends HttpServlet {
 		String jdbcPassword = "pcps@123";
 		String sql = "SELECT * FROM students WHERE sid=?";
 		
-		String fullname, course, section, result;
-		int sub1, sub2, total, average;
+		String fullname="", course="", section="", result="";
+		int sub1=0, sub2=0, total=0, average=0;
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -62,12 +62,12 @@ public class Servlet4 extends HttpServlet {
         out.println("<body>");
         out.println("<h2>Student Edit Form</h2>");
         out.println("<form action='Servlet5' method='get'>");
-        out.println("<p>SID:<input type='text' name='txtSid'></p>");
-        out.println("<p>Name:<input type='text' name='txtName'></p>");
+        out.println("<p>SID:<input type='text' name='txtSid' value="+sid+"></p>");
+        out.println("<p>Name:<input type='text' name='txtName' value="+fullname+"></p>");
         out.println("<p>Course:<select name='course' id='course'><option value='Bsc'>BSC</option><option value='BBM'>BBM</option></select></p>");
         out.println("<p>Section:<select name='section' id='section'><option value='A'>A</option><option value='B'>B</option></select></p>");
-        out.println("<p>Subject 1:<input type='text' name='txtSub1'></p>");
-        out.println("<p>Subject 2:<input type='text' name='txtSub2'></p>");
+        out.println("<p>Subject 1:<input type='text' name='txtSub1' value="+sub1+"></p>");
+        out.println("<p>Subject 2:<input type='text' name='txtSub2' value="+sub2+"></p>");
         out.println("<input type='submit' value='Update'>");
         out.println("</form>");
         out.println("</body>");
