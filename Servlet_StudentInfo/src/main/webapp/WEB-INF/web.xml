@@ -69,4 +69,24 @@
     <servlet-name>Servlet5</servlet-name>
     <url-pattern>/Servlet5</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Servlet6</display-name>
+    <servlet-name>Servlet6</servlet-name>
+    <servlet-class>pkg1.Servlet6</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet6</servlet-name>
+    <url-pattern>/Servlet6</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Servlet7</display-name>
+    <servlet-name>Servlet7</servlet-name>
+    <servlet-class>pkg1.Servlet7</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet7</servlet-name>
+    <url-pattern>/Servlet7</url-pattern>
+  </servlet-mapping>
 </web-app>

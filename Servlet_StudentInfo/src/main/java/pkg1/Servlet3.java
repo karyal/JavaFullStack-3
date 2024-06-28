@@ -30,6 +30,7 @@ public class Servlet3 extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<h1>All Students</h1>");
+		out.println("<p><a href='WebForm'>New</a></p>");
 		out.println("<table width='90%' border='1'>");
 		out.println("<tr><td>SID</td><td>FULLNAME</td><td>COURSE</td><td>SECTION</td><td>POP</td><td>CSS</td><td>TOTAL</td><td>AVERAGE</td><td>RESULT</td><td>CONTROL</td></tr>");
 		
@@ -44,7 +45,7 @@ public class Servlet3 extends HttpServlet {
 			PreparedStatement pstat = conn.prepareStatement(sql);
 			ResultSet rs = pstat.executeQuery();
 			while(rs.next()) {
-				out.println("<tr><td>"+rs.getInt("sid")+"</td><td>"+rs.getString("fullname")+"</td><td>"+rs.getString("course")+"</td><td>"+rs.getString("section")+"</td><td>"+rs.getInt("sub1")+"</td><td>"+rs.getInt("sub2")+"</td><td>"+rs.getInt("total")+"</td><td>"+rs.getInt("average")+"</td><td>"+rs.getString("result")+"</td><td><a href='Servlet4?sid="+rs.getInt("sid")+"'>EDIT</a> | DELETE </td></tr>");
+				out.println("<tr><td>"+rs.getInt("sid")+"</td><td>"+rs.getString("fullname")+"</td><td>"+rs.getString("course")+"</td><td>"+rs.getString("section")+"</td><td>"+rs.getInt("sub1")+"</td><td>"+rs.getInt("sub2")+"</td><td>"+rs.getInt("total")+"</td><td>"+rs.getInt("average")+"</td><td>"+rs.getString("result")+"</td><td><a href='Servlet4?sid="+rs.getInt("sid")+"'>EDIT</a> |<a href='Servlet6?sid="+rs.getInt("sid")+"'>DELETE</a> <a>Export</a> </td></tr>");
 			}
 			rs.close();
 			pstat.close();
@@ -54,6 +55,7 @@ public class Servlet3 extends HttpServlet {
 			System.out.println("Error : "+ex.getMessage());
 		}
 		out.println("</table>");
+		out.println("<p><a>Export All</a><p>");
 		out.println("</body>");
 		out.println("</html>");
 		out.close();

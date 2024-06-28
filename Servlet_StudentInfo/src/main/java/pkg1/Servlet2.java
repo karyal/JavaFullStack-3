@@ -42,7 +42,7 @@ public class Servlet2 extends HttpServlet {
 		out.println("<p>TOTAL : " + total + "</p>");
 		out.println("<p>AVERAGE : " + average + "</p>");
 		out.println("<p>RESULT : " + result + "</p>");
-		out.println("<p><a href='WebForm'>index</a></p>");
+		out.println("<p><a href='Servlet3'>index</a></p>");
 		out.close();
 
 		// save data on mysql table?

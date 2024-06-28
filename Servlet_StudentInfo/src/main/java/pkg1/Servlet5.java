@@ -50,6 +50,7 @@ public class Servlet5 extends HttpServlet {
 			int rows = preparedStatement.executeUpdate();
 			if (rows > 0) {
 				out.println("<p>Data update successfully!</p>");
+				out.println("<p><a href='Servlet3'>Index</a></p>");
 			} else {
 				out.println("<p>Failed to update data.</p>");
 			}
