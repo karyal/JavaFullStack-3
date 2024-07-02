@@ -89,4 +89,14 @@
     <servlet-name>Servlet7</servlet-name>
     <url-pattern>/Servlet7</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Servlet8</display-name>
+    <servlet-name>Servlet8</servlet-name>
+    <servlet-class>pkg1.Servlet8</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet8</servlet-name>
+    <url-pattern>/Servlet8</url-pattern>
+  </servlet-mapping>
 </web-app>
