@@ -8,14 +8,12 @@
 </head>
 <body>
 <h1>Contact Us</h1>
-<p>PCPS College</p>
 <p>Kandevtasthan, Lalitpur,Nepal</p>
 <p>Mobile: (+977) - 15181033</p>
-<p>Mobile: (+977) - 15181033</p>
-
+<p>Email: connect@patancollege.org</p>
 <br/><br/><br/><br/><br/>
-	<p><a href='index.jsp'>Index</a></p>
-	<p><a href='about.jsp'>Contact Us</a></p>
-	<p><a href='courses.jsp'>Out Courses</a></p>
+	<h1><a href='index.jsp'>Index Page</a></h1>	
+	<h2><a href='about.jsp'>About Us</a></h2>
+	<h2><a href='products.jsp'>Products</a></h2>
 </body>
 </html>

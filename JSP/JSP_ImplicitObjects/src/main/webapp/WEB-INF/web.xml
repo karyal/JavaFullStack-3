@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	id="WebApp_ID" version="6.0">
+	<display-name>JSP_ImplicitObjects</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>site_title</param-name>
+		<param-value>http://mysite.com</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>application_object</servlet-name>
+		<jsp-file>/application_object.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>application_object</servlet-name>
+		<url-pattern>/app_object</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>config_object</servlet-name>
+		<jsp-file>/config_object.jsp</jsp-file>
+		<init-param>
+			<param-name>page_title</param-name>
+			<param-value>Contact Us</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>config_object</servlet-name>
+		<url-pattern>/app_config</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

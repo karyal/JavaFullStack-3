@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>HTML CSS JS IMAGE</title>
+<link rel='stylesheet' href='styles.css'>
 </head>
 <body>
 
