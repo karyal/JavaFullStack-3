@@ -11,6 +11,7 @@
 <form action='ReceiveUser'>
 <p>UID : <input type='text' name='txtUid'></p>
 <p>NAME : <input type='text' name='txtName'></p>
+<p>EMAIL : <input type='text' name='txtEmail'></p>
 <p><input type='submit' value='SEND'></p>
 </form>
 </body>

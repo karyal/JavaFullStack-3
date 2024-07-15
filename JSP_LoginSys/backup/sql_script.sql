@@ -5,7 +5,8 @@ drop table users;
 
 create table users(
 	uid int not null,
-    full_name varchar(50) not null
+    full_name varchar(50) not null,
+    email varchar(50) not null
 );
 
 alter table users
