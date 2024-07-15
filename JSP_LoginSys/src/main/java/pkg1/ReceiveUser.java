@@ -29,11 +29,12 @@ public class ReceiveUser extends HttpServlet {
 		int uid = Integer.parseInt(request.getParameter("txtUid"));
 		String fullName = request.getParameter("txtName");
 		String email = request.getParameter("txtEmail");
+		String phone = request.getParameter("txtPhone");
 		
 		//Validate - Range ok
 		//Process - ok
 		//Send value to database table
-		new LoginManager().save(uid, fullName, email);
+		new LoginManager().save(uid, fullName, email, phone);
 		
 		//Output
 		System.out.println(uid);

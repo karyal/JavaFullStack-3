@@ -12,6 +12,7 @@
 <p>UID : <input type='text' name='txtUid'></p>
 <p>NAME : <input type='text' name='txtName'></p>
 <p>EMAIL : <input type='text' name='txtEmail'></p>
+<p>PHONE : <input type='text' name='txtPhone'></p>
 <p><input type='submit' value='SEND'></p>
 </form>
 </body>
