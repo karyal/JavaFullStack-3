@@ -9,7 +9,8 @@ create table users(
     email varchar(50) not null,
     phone varchar(50) not null,
     login_name varchar(50) not null unique,
-    login_password varchar(50) not null
+    login_password varchar(50) not null,
+    user_type varchar(50) not null
 );
 
 alter table users
