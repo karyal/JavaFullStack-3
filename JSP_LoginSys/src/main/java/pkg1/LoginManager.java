@@ -6,14 +6,14 @@ import java.sql.PreparedStatement;
 
 public class LoginManager {
 	
-	public void save(int uid, String fullName, String email, String phone) {
+	public void save(int uid, String fullName, String email, String phone, String loginName) {
 		String DRIVER = "com.mysql.cj.jdbc.Driver";
 		String HOST="localhost";
 		int PORT =3306;
 		String DBNAME="dbLoginSys";
 		String user="root";
 		String password="pcps@123";
-		String SQL="insert into users values(?, ?, ?, ?);";
+		String SQL="insert into users values(?, ?, ?, ?, ?);";
 		String URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DBNAME;		
 		try{
 			Class.forName(DRIVER);
@@ -24,6 +24,7 @@ public class LoginManager {
 			pstat.setString(2, fullName);
 			pstat.setString(3, email);
 			pstat.setString(4, phone);
+			pstat.setString(5, loginName);
 			pstat.executeUpdate(); //Insert, update, delete
 			pstat.close();
 			conn.close();

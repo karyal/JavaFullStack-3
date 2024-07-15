@@ -30,11 +30,12 @@ public class ReceiveUser extends HttpServlet {
 		String fullName = request.getParameter("txtName");
 		String email = request.getParameter("txtEmail");
 		String phone = request.getParameter("txtPhone");
+		String user = request.getParameter("txtUser");
 		
 		//Validate - Range ok
 		//Process - ok
 		//Send value to database table
-		new LoginManager().save(uid, fullName, email, phone);
+		new LoginManager().save(uid, fullName, email, phone, user);
 		
 		//Output
 		System.out.println(uid);

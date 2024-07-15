@@ -13,6 +13,7 @@
 <p>NAME : <input type='text' name='txtName'></p>
 <p>EMAIL : <input type='text' name='txtEmail'></p>
 <p>PHONE : <input type='text' name='txtPhone'></p>
+<p>LOGIN ID : <input type='text' name='txtUser'></p>
 <p><input type='submit' value='SEND'></p>
 </form>
 </body>
