@@ -9,7 +9,7 @@
 <body>
 <% 
 	String user = request.getParameter("user");
-	session.setAttribute("current_user", user);
+	session.setAttribute("current_user", user);//Store in Session variable as current_user
 %>
 <h2>Session Object-2</h2>
 <p>Welcome <% out.println(session.getAttribute("current_user")); %></p>

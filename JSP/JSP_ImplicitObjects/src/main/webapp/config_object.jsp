@@ -9,7 +9,7 @@
 <body>
 <h1>Config Object</h1>
 <%
-	String pageTitle = config.getInitParameter("page_title");
+	String pageTitle = config.getInitParameter("page_title"); //Servlet/Page Level variable defined in web.xml
 %>
 <p>Page Title <% out.println(pageTitle); %></p>
 </body>

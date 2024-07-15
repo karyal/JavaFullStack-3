@@ -4,11 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Response Object</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<%
-		response.sendRedirect("http://google.com.np/search?q=Kathmandu");//search-> Servlet ?q parmeter -> Kthamndu -> value (google.com.np)
-	%>
+<h1>JSP Filter</h1>
+<p><a href='jsp_filter2?n1=23&n2=43'>Next</a></p>
 </body>
 </html>
