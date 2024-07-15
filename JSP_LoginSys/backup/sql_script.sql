@@ -8,7 +8,8 @@ create table users(
     full_name varchar(50) not null,
     email varchar(50) not null,
     phone varchar(50) not null,
-    login_name varchar(50) not null unique
+    login_name varchar(50) not null unique,
+    login_password varchar(50) not null
 );
 
 alter table users
