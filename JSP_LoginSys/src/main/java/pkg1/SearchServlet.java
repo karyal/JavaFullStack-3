@@ -14,8 +14,8 @@ public class SearchServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Receive
 		String strSearch = request.getParameter("txtSearch");
-		boolean result = isNumeric(strSearch);
-		
+		//boolean result = new Utilities().isNumeric(strSearch);
+		new LoginManager().search(strSearch);
 		//Validate
 		//Process -> Search
 		//Display Result

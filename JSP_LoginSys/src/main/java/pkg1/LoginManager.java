@@ -3,8 +3,37 @@ package pkg1;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class LoginManager {
+	
+	public void search(String strSearch) {
+		String DRIVER = "com.mysql.cj.jdbc.Driver";
+		String HOST="localhost";
+		int PORT =3306;
+		String DBNAME="dbLoginSys";
+		String USER="root";
+		String PASSWORD="pcps@123";
+		String SQL="SELECT * FROM users WHERE full_name='"+strSearch+"' OR email='"+strSearch+"' OR phone='"+strSearch+"' OR login_name='"+strSearch+"' OR login_password='"+strSearch+"' OR user_type='"+strSearch+"'";
+		String URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DBNAME;	
+		boolean result = new Utilities().isNumeric(strSearch);
+		if(result) {
+			SQL="SELECT * FROM users WHERE uid="+strSearch;
+		}
+		try {
+			Class.forName(DRIVER);
+			Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+			PreparedStatement pstat = conn.prepareStatement(SQL);
+			ResultSet rs = pstat.executeQuery();
+			while(rs.next()) {
+				System.out.println(rs.getInt("uid")+", "+rs.getString("full_name")+", "+rs.getString("phone")+", "+rs.getString("email")+", "+rs.getString("login_name")+", "+rs.getString("login_password")+", "+rs.getString("user_type"));
+			}
+			conn.close();
+		}
+		catch(Exception ex) {
+			System.out.println("Error : "+ex.getMessage());
+		}
+	}
 	
 	public void save(int uid, String fullName, String email, String phone, String loginName, String loginPassword, String userType) {
 		String DRIVER = "com.mysql.cj.jdbc.Driver";

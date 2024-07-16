@@ -8,9 +8,9 @@
 </head>
 <body>
 <h1>Search User</h1>
-<form>
+<form action='SearchServlet'>
 <p>SEARCH : <input type='text' name='txtSearch'>
-<input type='button' value='SEARCH'></p>
+<input type='submit' value='SEARCH'></p>
 </form>
 </body>
 </html>
