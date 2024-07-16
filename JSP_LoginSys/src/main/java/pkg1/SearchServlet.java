@@ -20,6 +20,7 @@ public class SearchServlet extends HttpServlet {
 		List<User> users = new LoginManager().search(strSearch);
 		
 		//forward to display all users on DisplayUsers.jsp file
+		request.setAttribute("users", users);
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("DisplayUsers.jsp");
 		requestDispatcher.forward(request, response);
 	}
