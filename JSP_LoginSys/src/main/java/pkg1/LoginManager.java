@@ -16,7 +16,7 @@ public class LoginManager {
 		String PASSWORD="pcps@123";
 		String SQL="SELECT * FROM users WHERE full_name='"+strSearch+"' OR email='"+strSearch+"' OR phone='"+strSearch+"' OR login_name='"+strSearch+"' OR login_password='"+strSearch+"' OR user_type='"+strSearch+"'";
 		String URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DBNAME;	
-		boolean result = new Utilities().isNumeric(strSearch);
+		boolean result = new Utils().isNumeric(strSearch);
 		if(result) {
 			SQL="SELECT * FROM users WHERE uid="+strSearch;
 		}

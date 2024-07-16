@@ -1,6 +1,6 @@
 package pkg1;
 
-public class Utilities {
+public class Utils {
 	public boolean isNumeric(String str1) {
 		boolean result = false;
 		try {
