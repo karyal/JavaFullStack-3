@@ -4,10 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginManager {
 	
-	public void search(String strSearch) {
+	public List<User> search(String strSearch) {
 		String DRIVER = "com.mysql.cj.jdbc.Driver";
 		String HOST="localhost";
 		int PORT =3306;
@@ -20,12 +22,17 @@ public class LoginManager {
 		if(result) {
 			SQL="SELECT * FROM users WHERE uid="+strSearch;
 		}
+		List users = null;
 		try {
 			Class.forName(DRIVER);
 			Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
 			PreparedStatement pstat = conn.prepareStatement(SQL);
 			ResultSet rs = pstat.executeQuery();
+			users = new ArrayList<User>();
+			
 			while(rs.next()) {
+				User user = new User(rs.getInt("uid"), rs.getString("full_name"), rs.getString("phone"), rs.getString("email"), rs.getString("login_name"), rs.getString("login_password"), rs.getString("user_type"));
+				users.add(user);
 				System.out.println(rs.getInt("uid")+", "+rs.getString("full_name")+", "+rs.getString("phone")+", "+rs.getString("email")+", "+rs.getString("login_name")+", "+rs.getString("login_password")+", "+rs.getString("user_type"));
 			}
 			conn.close();
@@ -33,6 +40,7 @@ public class LoginManager {
 		catch(Exception ex) {
 			System.out.println("Error : "+ex.getMessage());
 		}
+		return users;
 	}
 	
 	public void save(int uid, String fullName, String email, String phone, String loginName, String loginPassword, String userType) {
