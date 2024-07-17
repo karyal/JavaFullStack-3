@@ -15,7 +15,7 @@
 </head>
 <body>
 <h2>Edit User</h2>
-<form action='ReceiveUser'>
+<form action='UpdateUser'>
 <p>UID : <input type='text' name='txtUid' value='<% out.println(user.getUid()); %>'></p>
 <p>NAME : <input type='text' name='txtName' value='<% out.println(user.getFullName()); %>'></p>
 <p>EMAIL : <input type='text' name='txtEmail' value='<% out.println(user.getEmail()); %>'></p>
@@ -53,7 +53,7 @@
 %>
 </select>
 </p>
-<p><input type='submit' value='SEND'></p>
+<p><input type='submit' value='UPDATE'></p>
 </form>
 </body>
 </html>

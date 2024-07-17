@@ -104,4 +104,38 @@ public class LoginManager {
 		}
 		return result;
 	}
+	public boolean update(int uid, String fullName, String email, String phone, String loginName, String loginPassword, String userType) {
+		boolean result=false;
+		String DRIVER = "com.mysql.cj.jdbc.Driver";
+		String HOST="localhost";
+		int PORT =3306;
+		String DBNAME="dbLoginSys";
+		String user="root";
+		String password="pcps@123";
+		String SQL="update users set full_name=?, email=?, phone=?, login_name=?, login_password=?, user_type=? WHERE uid=?;";
+		String URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DBNAME;		
+		try{
+			Class.forName(DRIVER);
+			//Connect
+			Connection conn = DriverManager.getConnection(URL, user, password);
+			PreparedStatement pstat = conn.prepareStatement(SQL);
+			pstat.setString(1, fullName);
+			pstat.setString(2, email);
+			pstat.setString(3, phone);
+			pstat.setString(4, loginName);
+			pstat.setString(5, loginPassword);
+			pstat.setString(6, userType);
+			pstat.setInt(7, uid);
+			pstat.executeUpdate(); //Insert, update, delete
+			pstat.close();
+			conn.close();
+			System.out.println("Record update successfully");
+			result=true;
+		}
+		catch(Exception ex) {
+			System.out.println("Error1 : "+ex.getMessage());
+			result=false;
+		}
+		return result;
+	}
 }
