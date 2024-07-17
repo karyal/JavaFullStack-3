@@ -1,23 +1,22 @@
 package pkg1;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
- * Servlet implementation class ReceiveUser
+ * Servlet implementation class ExportIndividual
  */
-public class ReceiveUser extends HttpServlet {
+public class ExportIndividual extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReceiveUser() {
+    public ExportIndividual() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,18 +25,8 @@ public class ReceiveUser extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Receive
-		String fullName = request.getParameter("txtName");
-		String email = request.getParameter("txtEmail");
-		String phone = request.getParameter("txtPhone");
-		String user = request.getParameter("txtUser");
-		String password = request.getParameter("txtPassword");
-		String userType = request.getParameter("cmbUserType");
-		boolean result = new LoginManager().save(fullName, email, phone, user, password, userType);
-		
-		PrintWriter out = response.getWriter();
-		out.println("<p>User save successfully</p>");
-		out.println("<p><a>Index</a></p>");
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

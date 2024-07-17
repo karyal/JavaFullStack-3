@@ -9,6 +9,33 @@ import java.util.List;
 
 public class LoginManager {
 	
+	public User search(int uid) {
+		String DRIVER = "com.mysql.cj.jdbc.Driver";
+		String HOST="localhost";
+		int PORT =3306;
+		String DBNAME="dbLoginSys";
+		String USER="root";
+		String PASSWORD="pcps@123";
+		String SQL="SELECT * FROM users WHERE uid="+uid+"";
+		String URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DBNAME;			
+		User user = null;
+		try {
+			Class.forName(DRIVER);
+			Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+			PreparedStatement pstat = conn.prepareStatement(SQL);
+			ResultSet rs = pstat.executeQuery();			
+			while(rs.next()) {
+				user = new User(rs.getInt("uid"), rs.getString("full_name"), rs.getString("phone"), rs.getString("email"), rs.getString("login_name"), rs.getString("login_password"), rs.getString("user_type"));
+				System.out.println(rs.getInt("uid")+", "+rs.getString("full_name")+", "+rs.getString("phone")+", "+rs.getString("email")+", "+rs.getString("login_name")+", "+rs.getString("login_password")+", "+rs.getString("user_type"));
+			}
+			conn.close();
+		}
+		catch(Exception ex) {
+			System.out.println("Error : "+ex.getMessage());
+		}
+		return user;
+	}
+	
 	public List<User> search(String strSearch) {
 		String DRIVER = "com.mysql.cj.jdbc.Driver";
 		String HOST="localhost";
@@ -43,7 +70,8 @@ public class LoginManager {
 		return users;
 	}
 	
-	public void save(int uid, String fullName, String email, String phone, String loginName, String loginPassword, String userType) {
+	public boolean save(String fullName, String email, String phone, String loginName, String loginPassword, String userType) {
+		boolean result=false;
 		String DRIVER = "com.mysql.cj.jdbc.Driver";
 		String HOST="localhost";
 		int PORT =3306;
@@ -54,10 +82,10 @@ public class LoginManager {
 		String URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DBNAME;		
 		try{
 			Class.forName(DRIVER);
-			//connect
+			//Connect
 			Connection conn = DriverManager.getConnection(URL, user, password);
 			PreparedStatement pstat = conn.prepareStatement(SQL);
-			pstat.setInt(1, uid);
+			pstat.setInt(1, 0);
 			pstat.setString(2, fullName);
 			pstat.setString(3, email);
 			pstat.setString(4, phone);
@@ -68,10 +96,12 @@ public class LoginManager {
 			pstat.close();
 			conn.close();
 			System.out.println("Record insert successfully");
+			result=true;
 		}
 		catch(Exception ex) {
-			System.out.println("Error : "+ex.getMessage());
+			System.out.println("Error1 : "+ex.getMessage());
+			result=false;
 		}
-		
+		return result;
 	}
 }

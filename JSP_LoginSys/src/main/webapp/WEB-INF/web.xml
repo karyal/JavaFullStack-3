@@ -29,4 +29,24 @@
     <servlet-name>SearchServlet</servlet-name>
     <url-pattern>/SearchServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExportIndividual</display-name>
+    <servlet-name>ExportIndividual</servlet-name>
+    <servlet-class>pkg1.ExportIndividual</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExportIndividual</servlet-name>
+    <url-pattern>/ExportIndividual</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExportAll</display-name>
+    <servlet-name>ExportAll</servlet-name>
+    <servlet-class>pkg1.ExportAll</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExportAll</servlet-name>
+    <url-pattern>/ExportAll</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -9,7 +9,6 @@
 <body>
 <h2>New User</h2>
 <form action='ReceiveUser'>
-<p>UID : <input type='text' name='txtUid'></p>
 <p>NAME : <input type='text' name='txtName'></p>
 <p>EMAIL : <input type='text' name='txtEmail'></p>
 <p>PHONE : <input type='text' name='txtPhone'></p>
