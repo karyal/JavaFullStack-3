@@ -104,6 +104,7 @@ public class LoginManager {
 		}
 		return result;
 	}
+	
 	public boolean update(int uid, String fullName, String email, String phone, String loginName, String loginPassword, String userType) {
 		boolean result=false;
 		String DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -130,6 +131,34 @@ public class LoginManager {
 			pstat.close();
 			conn.close();
 			System.out.println("Record update successfully");
+			result=true;
+		}
+		catch(Exception ex) {
+			System.out.println("Error1 : "+ex.getMessage());
+			result=false;
+		}
+		return result;
+	}
+	public boolean delete(int uid) {
+		boolean result=false;
+		String DRIVER = "com.mysql.cj.jdbc.Driver";
+		String HOST="localhost";
+		int PORT =3306;
+		String DBNAME="dbLoginSys";
+		String user="root";
+		String password="pcps@123";
+		String SQL="delete from users WHERE uid=?;";
+		String URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DBNAME;		
+		try{
+			Class.forName(DRIVER);
+			//Connect
+			Connection conn = DriverManager.getConnection(URL, user, password);
+			PreparedStatement pstat = conn.prepareStatement(SQL);
+			pstat.setInt(1, uid);
+			pstat.executeUpdate(); //Insert, update, delete
+			pstat.close();
+			conn.close();
+			System.out.println("Record delete successfully");
 			result=true;
 		}
 		catch(Exception ex) {

@@ -4,7 +4,7 @@ use dbLoginSys;
 drop table users;
 
 create table users(
-	uid int not null,
+	uid int not null primary key AUTO_INCREMENT,
     full_name varchar(50) not null,
     email varchar(50) not null,
     phone varchar(50) not null,
@@ -12,14 +12,6 @@ create table users(
     login_password varchar(50) not null,
     user_type varchar(50) not null
 );
-
-alter table users
-	add constraint pk_uid
-		primary key(uid);
-
-describe users;
-
-insert into users values(1);
 
 select * from users;
 
