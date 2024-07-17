@@ -9,6 +9,37 @@ import java.util.List;
 
 public class LoginManager {
 	
+	public boolean login(String strUser, String strPass) {
+		boolean result=false;
+		String DRIVER = "com.mysql.cj.jdbc.Driver";
+		String HOST="localhost";
+		int PORT =3306;
+		String DBNAME="dbLoginSys";
+		String USER="root";
+		String PASSWORD="pcps@123";
+		String SQL="SELECT * FROM users WHERE login_name=? AND login_password=?";
+		String URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DBNAME;			
+		User user = null;
+		try {
+			Class.forName(DRIVER);
+			Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+			PreparedStatement pstat = conn.prepareStatement(SQL);
+			pstat.setString(1, strUser);
+			pstat.setString(2, strPass);
+			ResultSet rs = pstat.executeQuery();			
+			while(rs.next()) {
+				user = new User(rs.getInt("uid"), rs.getString("full_name"), rs.getString("phone"), rs.getString("email"), rs.getString("login_name"), rs.getString("login_password"), rs.getString("user_type"));
+				System.out.println(rs.getInt("uid")+", "+rs.getString("full_name")+", "+rs.getString("phone")+", "+rs.getString("email")+", "+rs.getString("login_name")+", "+rs.getString("login_password")+", "+rs.getString("user_type"));
+			}
+			rs.close();
+			conn.close();
+			result = true;
+		}
+		catch(Exception ex) {
+			System.out.println("Error : "+ex.getMessage());
+		}
+		return result;
+	}
 	public User search(int uid) {
 		String DRIVER = "com.mysql.cj.jdbc.Driver";
 		String HOST="localhost";
