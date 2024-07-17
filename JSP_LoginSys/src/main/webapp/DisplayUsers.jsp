@@ -21,5 +21,6 @@
 %>
 </table>
 <p><a href='ExportAll'>Export All</a></p>
+<p><a href='TempIndex.jsp'>Index</a></p>
 </body>
 </html>

@@ -37,7 +37,7 @@ public class UpdateUser extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		out.println("<p>User update successfully</p>");
-		out.println("<p><a>Index</a></p>");
+		out.println("<p><a href='TempIndex.jsp'>Index</a></p>");
 	}
 
 	/**

@@ -30,7 +30,7 @@ public class DeleteUser extends HttpServlet {
 		boolean result = new LoginManager().delete(uid);
 		PrintWriter out = response.getWriter();
 		out.println("<p>User delete successfully</p>");
-		out.println("<p><a>Index</a></p>");
+		out.println("<p><a href='TempIndex.jsp'>Index</a></p>");
 	}
 
 	/**
