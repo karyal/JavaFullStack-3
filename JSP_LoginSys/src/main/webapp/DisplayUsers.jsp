@@ -10,6 +10,12 @@
 <title>All Users</title>
 </head>
 <body>
+<% 
+	HttpSession sessions=request.getSession(false);
+   	String currentUser=(String)sessions.getAttribute("currentUser");
+%>
+<p>Current User: <% out.println(currentUser); %><p>
+
 <h1>Search User</h1>
 <table width='95%' border=1>
 <tr><td>UID</td><td>NAME</td><td>EMAIL</td><td>PHONE</td><td>USERNAME</td><td>PASSWORD</td><td>USER TYPE</td><td>CONTROL</td></tr>

@@ -9,6 +9,12 @@
 <meta charset="ISO-8859-1">
 <title>Delete User</title>
 <% 
+	HttpSession sessions=request.getSession(false);
+   	String currentUser=(String)sessions.getAttribute("currentUser");
+%>
+<p>Current User: <% out.println(currentUser); %><p>
+
+<% 
 	int uid = Integer.parseInt(request.getParameter("uid"));
 	User user = new LoginManager().search(uid);	
 %>

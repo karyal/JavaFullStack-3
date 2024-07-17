@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -36,6 +38,11 @@ public class UpdateUser extends HttpServlet {
 		boolean result = new LoginManager().update(uid, fullName, email, phone, user, password, userType);
 		
 		PrintWriter out = response.getWriter();
+		
+		HttpSession sessions=request.getSession(false);
+	   	String currentUser=(String)sessions.getAttribute("currentUser");
+	   	out.println("<p>Current User: "+currentUser+"<p>");
+	   	
 		out.println("<p>User update successfully</p>");
 		out.println("<p><a href='TempIndex.jsp'>Index</a></p>");
 	}

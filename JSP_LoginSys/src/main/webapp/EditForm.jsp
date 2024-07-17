@@ -14,6 +14,11 @@
 %>
 </head>
 <body>
+<% 
+	HttpSession sessions=request.getSession(false);
+   	String currentUser=(String)sessions.getAttribute("currentUser");
+%>
+<p>Current User: <% out.println(currentUser); %><p>
 <h2>Edit User</h2>
 <form action='UpdateUser'>
 <p>UID : <input type='text' name='txtUid' value='<% out.println(user.getUid()); %>'></p>

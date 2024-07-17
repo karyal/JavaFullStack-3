@@ -7,6 +7,12 @@
 <title>New User</title>
 </head>
 <body>
+<% 
+	HttpSession sessions=request.getSession(false);
+   	String currentUser=(String)sessions.getAttribute("currentUser");
+%>
+<p>Current User: <% out.println(currentUser); %><p>
+
 <h2>New User</h2>
 <form action='ReceiveUser'>
 <p>NAME : <input type='text' name='txtName'></p>

@@ -8,6 +8,13 @@
 </head>
 <body>
 <h1>Temp Home Page</h1>
+
+<% 
+	HttpSession sessions=request.getSession(false);
+   	String currentUser=(String)sessions.getAttribute("currentUser");
+%>
+<p>Current User: <% out.println(currentUser); %><p>
+
 <p><a href='NewUser.jsp'>New User</a></p>
 <p><a href='SearchUser.jsp'>Search User</a></p>
 </body>

@@ -7,10 +7,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class ReceiveUser
- */
+
 public class ReceiveUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -36,6 +35,11 @@ public class ReceiveUser extends HttpServlet {
 		boolean result = new LoginManager().save(fullName, email, phone, user, password, userType);
 		
 		PrintWriter out = response.getWriter();
+		
+		HttpSession sessions=request.getSession(false);
+	   	String currentUser=(String)sessions.getAttribute("currentUser");
+	   	out.println("<p>Current User: "+currentUser+"<p>");
+	   	
 		out.println("<p>User save successfully</p>");
 		out.println("<p><a>Index</a></p>");
 	}
