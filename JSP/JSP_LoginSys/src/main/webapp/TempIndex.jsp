@@ -14,6 +14,7 @@
    	String currentUser=(String)sessions.getAttribute("currentUser");
 %>
 <p>Current User: <% out.println(currentUser); %><p>
+<p><a href='LogoutServlet'>Logout</a><p>
 
 <p><a href='NewUser.jsp'>New User</a></p>
 <p><a href='SearchUser.jsp'>Search User</a></p>

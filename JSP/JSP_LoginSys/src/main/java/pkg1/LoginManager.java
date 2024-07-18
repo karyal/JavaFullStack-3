@@ -26,14 +26,15 @@ public class LoginManager {
 			PreparedStatement pstat = conn.prepareStatement(SQL);
 			pstat.setString(1, strUser);
 			pstat.setString(2, strPass);
-			ResultSet rs = pstat.executeQuery();			
+			ResultSet rs = pstat.executeQuery();
 			while(rs.next()) {
 				user = new User(rs.getInt("uid"), rs.getString("full_name"), rs.getString("phone"), rs.getString("email"), rs.getString("login_name"), rs.getString("login_password"), rs.getString("user_type"));
-				System.out.println(rs.getInt("uid")+", "+rs.getString("full_name")+", "+rs.getString("phone")+", "+rs.getString("email")+", "+rs.getString("login_name")+", "+rs.getString("login_password")+", "+rs.getString("user_type"));
+				//System.out.println(rs.getInt("uid")+", "+rs.getString("full_name")+", "+rs.getString("phone")+", "+rs.getString("email")+", "+rs.getString("login_name")+", "+rs.getString("login_password")+", "+rs.getString("user_type"));
+				//System.out.println(user);
+				result = true;
 			}
 			rs.close();
-			conn.close();
-			result = true;
+			conn.close();			
 		}
 		catch(Exception ex) {
 			System.out.println("Error : "+ex.getMessage());
