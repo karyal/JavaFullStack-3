@@ -23,7 +23,8 @@
 <% 
 	List<User> users = (List) request.getAttribute("users");
 	for(User user: users){
-		out.println("<tr><td>"+1000+user.getUid()+"</td><td>"+user.getFullName()+"</td><td>"+user.getEmail()+"</td><td>"+user.getPhone()+"</td><td>"+user.getLoginName()+"</td><td>"+user.getLoginPassword()+"</td><td>"+user.getUserType()+"</td><td><a href='EditForm.jsp?uid="+user.getUid()+"'>EDIT</a> | <a href='DeleteForm.jsp?uid="+user.getUid()+"'>DELETE</a> | <a href='ExportIndividual?uid="+user.getUid()+"'>EXPORT</a></td></tr>");
+		if(!currentUser.equals(user.getLoginName()))
+			out.println("<tr><td>"+1000+user.getUid()+"</td><td>"+user.getFullName()+"</td><td>"+user.getEmail()+"</td><td>"+user.getPhone()+"</td><td>"+user.getLoginName()+"</td><td>"+user.getLoginPassword()+"</td><td>"+user.getUserType()+"</td><td><a href='EditForm.jsp?uid="+user.getUid()+"'>EDIT</a> | <a href='DeleteForm.jsp?uid="+user.getUid()+"'>DELETE</a> | <a href='ExportIndividual?uid="+user.getUid()+"'>EXPORT</a></td></tr>");
 	}
 %>
 </table>

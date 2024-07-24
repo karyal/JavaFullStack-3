@@ -15,6 +15,7 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String strUser = request.getParameter("txtUser");
 		String strPass = request.getParameter("txtPass");
 		String savePass = "no";
@@ -37,8 +38,8 @@ public class LoginServlet extends HttpServlet {
 				Cookie cookieUser=new Cookie("user",strUser);
 				Cookie cookiePass=new Cookie("pass",strPass);
 				
-				cookieUser.setMaxAge(5); //time in seconds
-				cookiePass.setMaxAge(5);
+				cookieUser.setMaxAge(60); //time in seconds
+				cookiePass.setMaxAge(60);
 				
 				response.addCookie(cookieUser);
 				response.addCookie(cookiePass);

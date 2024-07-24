@@ -7,14 +7,14 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoginManager {
+public class LoginManagerV2 extends MyDB{
 	
 	public boolean login(String strUser, String strPass) {
 		boolean result=false;
 		String SQL="SELECT * FROM users WHERE login_name=? AND login_password=?";			
 		User user = null;
 		try {
-			Connection conn = new MyDB().connect();
+			Connection conn = connect();
 			PreparedStatement pstat = conn.prepareStatement(SQL);
 			pstat.setString(1, strUser);
 			pstat.setString(2, strPass);
@@ -37,7 +37,7 @@ public class LoginManager {
 		String SQL="SELECT * FROM users WHERE uid="+uid+"";
 		User user = null;
 		try {
-			Connection conn = new MyDB().connect();
+			Connection conn = connect();
 			PreparedStatement pstat = conn.prepareStatement(SQL);
 			ResultSet rs = pstat.executeQuery();			
 			while(rs.next()) {
@@ -60,7 +60,7 @@ public class LoginManager {
 		}
 		List users = null;
 		try {
-			Connection conn = new MyDB().connect();
+			Connection conn = connect();
 			PreparedStatement pstat = conn.prepareStatement(SQL);
 			ResultSet rs = pstat.executeQuery();
 			users = new ArrayList<User>();
@@ -80,11 +80,9 @@ public class LoginManager {
 	
 	public boolean save(String fullName, String email, String phone, String loginName, String loginPassword, String userType) {
 		boolean result=false;
-		
 		String SQL="insert into users values(?, ?, ?, ?, ?, ?, ?);";
-	
 		try{
-			Connection conn = new MyDB().connect();
+			Connection conn = connect();
 			PreparedStatement pstat = conn.prepareStatement(SQL);
 			pstat.setInt(1, 0);
 			pstat.setString(2, fullName);
@@ -112,7 +110,7 @@ public class LoginManager {
 		String SQL="update users set full_name=?, email=?, phone=?, login_name=?, login_password=?, user_type=? WHERE uid=?;";
 		
 		try{
-			Connection conn = new MyDB().connect();
+			Connection conn = connect();
 			PreparedStatement pstat = conn.prepareStatement(SQL);
 			pstat.setString(1, fullName);
 			pstat.setString(2, email);
@@ -137,7 +135,7 @@ public class LoginManager {
 		boolean result=false;
 		String SQL="delete from users WHERE uid=?;";
 		try{
-			Connection conn = new MyDB().connect();
+			Connection conn = connect();
 			PreparedStatement pstat = conn.prepareStatement(SQL);
 			pstat.setInt(1, uid);
 			pstat.executeUpdate(); //Insert, update, delete
