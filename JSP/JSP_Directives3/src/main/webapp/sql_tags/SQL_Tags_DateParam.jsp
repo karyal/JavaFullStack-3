@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>SQL Tags</title>
+<title>SQL Tags-6</title>
 </head>
 <body>
 	<h1>SQL Tags-1</h1>

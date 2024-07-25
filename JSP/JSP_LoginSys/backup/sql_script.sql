@@ -14,6 +14,8 @@ create table users(
 );
 
 select * from users;
+delete from users;
+insert into users values(1,'Raj','raj@gmail.com','7894561231','raj','raj@123','admin');
 
 
 -- Update/chnage user password of mysql
@@ -22,6 +24,18 @@ select * from users;
 
 alter user 'root'@'localhost' 
 	identified by 'nepal@123';
+
+create table appointments(
+	app_id int primary key auto_increment, 
+    full_name varchar(50) not null, 
+    email varchar(50) not null, 
+    phone varchar(50) not null, 
+    department varchar(50) not null, 
+    doctor_name varchar(50) not null, 
+    app_date  varchar(50) not null, 
+    message  varchar(50) not null 
+);
+
 
 use test;
 
@@ -35,6 +49,7 @@ create table persons (
 );
 
 select * from persons;
+delete from persons;
 
 drop table dateTest;
 create table dateTest(
